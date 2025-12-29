@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Tantu Tales - Handmade ethnic clay jewelry, necklaces, and earrings with traditional Indian art. Shop unique, handcrafted pieces made with love.">
+  <meta name="keywords"
+    content="handmade jewelry, clay jewelry, ethnic jewelry, Indian jewelry, handcrafted necklaces, clay earrings">
+
+  <!-- Open Graph Tags for Social Media -->
+  <meta property="og:title" content="Tantu Tales - Handmade Jewelry">
+  <meta property="og:description"
+    content="Beautiful handcrafted clay jewelry with ethnic vibes. Each piece made with love.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+
+  <title>Tantu Tales - Handmade Jewelry | Ethnic Clay Necklaces & Earrings</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Logo Intro Animation -->
+  <div id="logo-intro" aria-hidden="true">
+    <img src="logo.png" alt="Tantu Tales Logo" />
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-fixed" id="logo-fixed">
+      <img src="logo.png" alt="Tantu Tales Logo">
+    </div>
+    <h1>Tantu Tales</h1>
+    <p>Handmade Jewelry with Love</p>
+
+    <!-- Navigation -->
+    <nav>
+      <a href="#products">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Cart Button -->
+  <button id="cart-btn" aria-label="Open shopping cart">
+    <span class="cart-icon">🛒</span>
+    <span id="cart-count" class="cart-count">0</span>
+  </button>
+
+  <!-- Overlay -->
+  <div id="overlay" aria-hidden="true"></div>
+
+  <!-- Cart Container -->
+  <div class="cart" id="cart" role="dialog" aria-labelledby="cart-title">
+    <h2 id="cart-title">Your Cart</h2>
+    <ul id="cart-items" aria-live="polite"></ul>
+    <div class="cart-summary">
+      <p>Total: ₹<span id="cart-total">0</span></p>
+      <button id="checkout-btn" style="display:none;">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <p class="cod-note">
+      💸 Cash on Delivery Available <br>
+      📲 Order confirmation will be sent via WhatsApp
+    </p>
+
+    <label for="search-bar" class="visually-hidden">Search products</label>
+    <input type="text" id="search-bar" placeholder="🔍 Search for necklaces, earrings..." aria-label="Search products">
+  </div>
+  <div class="return-policy-banner">
+    <div class="banner-content">
+      <span class="banner-icon">📦</span>
+      <span class="banner-text">
+        <strong>7-Day Return Policy:</strong> Defective items only. Unboxing video required.
+      </span>
+      <button class="banner-link" onclick="document.getElementById('return-policy-modal').classList.add('active')">
+        View Policy
+      </button>
+    </div>
+  </div>
+
+  <!-- Products Section -->
+
+  <section class="products" id="products">
+    <h2>Our Collection</h2>
+    <p class="purchase-note">
+      ✅ Cash on Delivery Available <br>
+      💬 Orders confirmed via WhatsApp for now
+    </p>
+
+    <div class="product-grid" id="product-grid">
+
+      <!-- PRODUCT 1: Floral Clay Necklace -->
+      <div class="product" data-id="1" data-base-image="floral-necklace" data-colors="pink,red,blue"
+        data-unavailable="yellow">
+        <div class="product-image-wrapper">
+          <img src="images/floral-necklace-pink.jpg" alt="Floral Clay Necklace - Handmade ethnic jewelry"
+            loading="lazy">
+          <span class="badge new-badge">New</span>
+        </div>
+        <h3 class="product-name">Floral Clay Necklace</h3>
+        <p class="product-description">Beautifully crafted floral necklace with ethnic vibes. Lightweight and
+          comfortable.</p>
+        <span class="product-price" data-price="499">₹499</span>
+        <button class="add-to-cart" aria-label="Add Floral Clay Necklace to cart">Add to Cart</button>
+        <button class="view-details" aria-label="View details of Floral Clay Necklace">Quick View</button>
+      </div>
+
+      <!-- PRODUCT 2: Ethnic Clay Earrings -->
+      <div class="product" data-id="2" data-base-image="ethnic-earrings" data-colors="red,blue,green"
+        data-unavailable="yellow,black">
+        <div class="product-image-wrapper">
+          <img src="images/ethnic-earrings-red.jpg" alt="Ethnic Clay Earrings - Traditional Indian art inspired"
+            loading="lazy">
+          <span class="badge bestseller-badge">Bestseller</span>
+        </div>
+        <h3 class="product-name">Ethnic Clay Earrings</h3>
+        <p class="product-description">Handmade earrings inspired by traditional Indian art. Perfect for festive
+          occasions.</p>
+        <span class="product-price" data-price="299">₹299</span>
+        <button class="add-to-cart" aria-label="Add Ethnic Clay Earrings to cart">Add to Cart</button>
+        <button class="view-details" aria-label="View details of Ethnic Clay Earrings">Quick View</button>
+      </div>
+
+      <!-- PRODUCT 3: Boho Clay Necklace -->
+      <div class="product" data-id="3" data-base-image="boho-necklace" data-colors="brown,beige,white"
+        data-unavailable="">
+        <div class="product-image-wrapper">
+          <img src="images/boho-necklace-brown.jpg" alt="Boho Clay Necklace - Modern bohemian style" loading="lazy">
+        </div>
+        <h3 class="product-name">Boho Clay Necklace</h3>
+        <p class="product-description">Trendy boho necklace perfect for modern fashion lovers. Handcrafted with care.
+        </p>
+        <span class="product-price" data-price="549">₹549</span>
+        <button class="add-to-cart" aria-label="Add Boho Clay Necklace to cart">Add to Cart</button>
+        <button class="view-details" aria-label="View details of Boho Clay Necklace">Quick View</button>
+      </div>
+
+      <!-- PRODUCT 4: Minimalist Clay Earrings -->
+      <div class="product" data-id="4" data-base-image="minimalist-earrings" data-colors="white,black,grey"
+        data-unavailable="pink">
+        <div class="product-image-wrapper">
+          <img src="images/minimalist-earrings-white.jpg" alt="Minimalist Clay Earrings - Simple elegant design"
+            loading="lazy">
+        </div>
+        <h3 class="product-name">Minimalist Clay Earrings</h3>
+        <p class="product-description">Lightweight, simple, and elegant for everyday wear. Goes with any outfit.</p>
+        <span class="product-price" data-price="199">₹199</span>
+        <button class="add-to-cart" aria-label="Add Minimalist Clay Earrings to cart">Add to Cart</button>
+        <button class="view-details" aria-label="View details of Minimalist Clay Earrings">Quick View</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <h2>Our Story</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>At Tantu Tales, every piece tells a story. We handcraft each jewelry item with love, passion, and attention
+          to detail. Inspired by traditional Indian art and modern aesthetics, our clay jewelry brings together the best
+          of both worlds.</p>
+        <p>Each piece is unique, made from high-quality polymer clay, and designed to last. We believe in sustainable
+          fashion and creating accessories that make you feel special.</p>
+      </div>
+      <div class="about-image">
+        <div id="jewelry-3d-viewer"></div>
+        <p style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.9rem;">
+          ✨ 3D Model - Drag to rotate!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <h2>Stay Connected</h2>
+    <p>Get updates on new collections, exclusive offers, and behind-the-scenes content!</p>
+    <form id="newsletter-form" class="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="Enter your email" required
+        aria-label="Email address for newsletter">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <h2>Get in Touch</h2>
+    <div class="contact-content">
+      <p>Have questions? Want a custom piece? We'd love to hear from you!</p>
+      <p>📧 Email: mytantutales@gmail.com</p>
+      <p>📱 WhatsApp: +91 84200 69397</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/mytantu_tales/" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram">🅾 Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61576739723294" target="_blank" rel="noopener noreferrer"
+          aria-label="Facebook">ⓕ Facebook</a>
+
+        <a href="https://wa.me/918420069397" target="_blank" rel="noopener noreferrer" aria-label="Whatsapp">✆
+          WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Detail Modal -->
+
+  <div id="product-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-content product-modal-large">
+      <button class="modal-close" aria-label="Close product details">&times;</button>
+      <div class="modal-body product-modal-body">
+
+        <!-- LEFT SIDE: Image & Colors -->
+        <div class="modal-left">
+          <div class="modal-image">
+            <img id="modal-product-image" src="" alt="">
+
+            <!-- Color Variant Selector -->
+            <div class="color-selector" id="color-selector">
+              <p class="color-label">Available Colors:</p>
+              <div class="color-buttons" id="color-buttons"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: Product Details & Reviews -->
+        <div class="modal-right">
+          <div class="modal-details">
+            <h2 id="modal-title"></h2>
+
+            <!-- Average Rating Display -->
+            <div class="product-rating-summary">
+              <div class="star-display" id="modal-star-display">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span class="rating-score" id="modal-rating-score">5.0</span>
+              <span class="rating-count" id="modal-rating-count">(0 reviews)</span>
+            </div>
+
+            <p id="modal-description"></p>
+
+            <div class="modal-features">
+              <h3>Features:</h3>
+              <ul>
+                <li>✓ 100% Handmade</li>
+                <li>✓ High-quality polymer clay</li>
+                <li>✓ Lightweight & comfortable</li>
+                <li>✓ Unique design</li>
+              </ul>
+            </div>
+
+            <p class="modal-price">₹<span id="modal-price"></span></p>
+            <button id="modal-add-to-cart" class="add-to-cart">Add to Cart</button>
+          </div>
+
+          <!-- REVIEWS SECTION -->
+          <div class="reviews-section">
+            <h3 class="reviews-title">⭐ Customer Reviews</h3>
+
+            <!-- Review Form -->
+            <div class="review-form-container">
+              <button class="write-review-btn" id="write-review-btn">
+                ✍️ Write a Review
+              </button>
+
+              <form class="review-form hidden" id="review-form">
+                <h4>Share Your Experience</h4>
+
+                <div class="form-group">
+                  <label>Your Rating *</label>
+                  <div class="star-rating-input" id="star-rating-input">
+                    <span class="star" data-rating="1">☆</span>
+                    <span class="star" data-rating="2">☆</span>
+                    <span class="star" data-rating="3">☆</span>
+                    <span class="star" data-rating="4">☆</span>
+                    <span class="star" data-rating="5">☆</span>
+                  </div>
+                  <input type="hidden" id="rating-value" value="0" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="reviewer-name">Your Name *</label>
+                  <input type="text" id="reviewer-name" placeholder="e.g., Shampa D." required maxlength="50">
+                </div>
+
+                <div class="form-group">
+                  <label for="reviewer-email">Your Email *</label>
+                  <input type="email" id="reviewer-email" placeholder="e.g., mytantutales@example.com" required
+                    maxlength="100">
+                  <small style="color: #666; font-size: 0.85rem;">Used to identify your review. Not displayed
+                    publicly.</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="review-text">Your Review *</label>
+                  <textarea id="review-text" placeholder="Tell us what you loved about this product..." required
+                    maxlength="500" rows="4"></textarea>
+                  <span class="char-count" id="char-count">0/500</span>
+                </div>
+
+                <div class="form-buttons">
+                  <button type="submit" class="submit-review-btn">Submit Review</button>
+                  <button type="button" class="cancel-review-btn" id="cancel-review-btn">Cancel</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Reviews List -->
+            <div class="reviews-list" id="reviews-list">
+              <div class="no-reviews" id="no-reviews">
+                <p>🌟 Be the first to review this product!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal" role="dialog" aria-labelledby="checkout-title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close checkout">&times;</button>
+      <div class="modal-body checkout-body">
+        <h2 id="checkout-title">Checkout</h2>
+        <form id="checkout-form">
+          <div class="payment-method">
+            <h3>Payment Method</h3>
+
+            <label>
+              <input type="radio" name="paymentMethod" value="cod" checked>
+              Cash on Delivery (WhatsApp confirmation)
+            </label>
+
+            <br>
+
+            <label>
+              <input type="radio" name="paymentMethod" value="online">
+              Pay Online
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="customer-name">Full Name *</label>
+            <input type="text" id="customer-name" required>
+          </div>
+          <div class="form-group">
+            <label for="customer-email">Email *</label>
+            <input type="email" id="customer-email" required>
+          </div>
+          <div class="form-group">
+            <label for="customer-phone">Phone Number *</label>
+            <input type="tel" id="customer-phone" required pattern="[0-9]{10}">
+          </div>
+          <div class="form-group">
+            <label for="customer-address">Delivery Address *</label>
+            <textarea id="customer-address" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="customer-pincode">Pincode *</label>
+            <input type="text" id="customer-pincode" required pattern="[0-9]{6}">
+          </div>
+
+
+          <div class="form-group terms-group">
+            <label class="terms-label">
+              <input type="checkbox" id="terms-checkbox" required>
+              <span class="terms-text">
+                ✨ I understand that each piece is lovingly handcrafted just for me.
+                My order will take <strong>5-7 business days</strong> to create.
+                Larger orders may need extra time to ensure perfect quality.
+              </span>
+            </label>
+          </div>
+
+          <div class="form-group return-policy-group">
+            <label class="return-label">
+              <input type="checkbox" id="return-policy-checkbox" required>
+              <span class="return-text">
+                📦 I have read and agree to the
+                <a href="#"
+                  onclick="event.preventDefault(); document.getElementById('return-policy-modal').classList.add('active')">
+                  <strong>Return & Exchange Policy</strong>
+                </a>
+                (Unboxing video required for returns)
+              </span>
+            </label>
+          </div>
+          <div class="checkout-summary">
+            <h3>Order Summary</h3>
+            <div id="checkout-items"></div>
+            <p class="checkout-total">Total: ₹<span id="checkout-total">0</span></p>
+            <p class="checkout-note">
+              🔒 For now, orders are confirmed personally via WhatsApp after checkout.
+            </p>
+
+          </div>
+          <button type="submit" id="pay-btn" class="pay-button">Pay Now</button>
+          <p style="margin-top:1rem; font-size:0.85rem;">
+            Prefer WhatsApp?
+            <a href="https://wa.me/918420069397" target="_blank">
+              Click here to place order
+            </a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div id="loading-spinner" class="loading-spinner" aria-hidden="true">
+    <div class="spinner"></div>
+    <p>Processing payment...</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#"
+        onclick="event.preventDefault(); document.getElementById('return-policy-modal').classList.add('active')">
+        Return Policy
+      </a>
+      <span class="footer-separator">|</span>
+      <a href="#contact">Contact Us</a>
+      <span class="footer-separator">|</span>
+      <a href="https://wa.me/918420069397" target="_blank">WhatsApp Support</a>
+    </div>
+    <p>&copy; 2025 Tantu Tales. All Rights Reserved.</p>
+    <p>Made with ❤️ in India</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="script.js"></script>
+
+  <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+    window.addEventListener('DOMContentLoaded', () => {
+      init3DViewer();
+    });
+
+    function init3DViewer() {
+      const container = document.getElementById('jewelry-3d-viewer');
+
+      if (!container) {
+        console.error('3D viewer container not found');
+        return;
+      }
+
+      const loading = document.createElement('div');
+      loading.className = 'viewer-loading';
+      loading.textContent = 'Loading 3D Model...';
+      container.appendChild(loading);
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xf5f5f5);
+
+      const camera = new THREE.PerspectiveCamera(
+        45,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+      );
+      camera.position.set(0, 0, 5);
+
+      const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true
+      });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.shadowMap.enabled = true;
+      container.appendChild(renderer.domElement);
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      directionalLight.position.set(5, 5, 5);
+      directionalLight.castShadow = true;
+      scene.add(directionalLight);
+
+      const pointLight = new THREE.PointLight(0xffffff, 0.5);
+      pointLight.position.set(-5, 5, 5);
+      scene.add(pointLight);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 2.0;
+      controls.enableZoom = true;
+      controls.minDistance = 2;
+      controls.maxDistance = 10;
+
+      const loader = new GLTFLoader();
+
+      loader.load(
+        './IndianJewels_1.glb',
+
+        function (gltf) {
+          const model = gltf.scene;
+          const box = new THREE.Box3().setFromObject(model);
+          const center = box.getCenter(new THREE.Vector3());
+          const size = box.getSize(new THREE.Vector3());
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = 3 / maxDim;
+          model.scale.multiplyScalar(scale);
+          model.position.sub(center.multiplyScalar(scale));
+          scene.add(model);
+          loading.remove();
+          console.log('✅ 3D Model loaded successfully!');
+        },
+
+        function (xhr) {
+          const percentComplete = (xhr.loaded / xhr.total) * 100;
+          loading.textContent = `Loading... ${Math.round(percentComplete)}%`;
+          console.log(`Loading: ${Math.round(percentComplete)}%`);
+        },
+
+        function (error) {
+          console.error('❌ Error loading 3D model:', error);
+          loading.textContent = '❌ Failed to load 3D model';
+          loading.style.color = '#e74c3c';
+        }
+      );
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      window.addEventListener('resize', () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+
+      controls.addEventListener('start', () => {
+        controls.autoRotate = false;
+      });
+
+      let interactionTimeout;
+      controls.addEventListener('end', () => {
+        clearTimeout(interactionTimeout);
+        interactionTimeout = setTimeout(() => {
+          controls.autoRotate = true;
+        }, 3000);
+      });
+    }
+  </script>
+  <div id="return-policy-modal" class="modal" role="dialog" aria-labelledby="policy-title" aria-hidden="true">
+    <div class="modal-content policy-modal-content">
+      <button class="modal-close" aria-label="Close return policy">&times;</button>
+      <div class="modal-body policy-body">
+        <h2 id="policy-title">📦 Return & Exchange Policy</h2>
+
+        <div class="policy-section policy-highlight">
+          <h3>🎥 Important: Unboxing Video Required!</h3>
+          <p>To process any return or exchange, you <strong>MUST</strong> record a video while opening the package. This
+            protects both you and us from fraud.</p>
+        </div>
+
+        <div class="policy-section">
+          <h3>✅ Eligible for Return/Exchange</h3>
+          <ul>
+            <li>✓ Defective or damaged products</li>
+            <li>✓ Items that don't match description</li>
+            <li>✓ Wrong item delivered</li>
+            <li>✓ Manufacturing defects</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3>❌ NOT Eligible for Return</h3>
+          <ul>
+            <li>✗ "Changed my mind" or color preference</li>
+            <li>✗ Products that have been worn or used</li>
+            <li>✗ Missing original packaging or tags</li>
+            <li>✗ Custom or personalized items</li>
+            <li>✗ Minor color variations (handmade nature)</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3>⏱️ Return Process & Timeline</h3>
+          <ol>
+            <li><strong>Day 1-7:</strong> Receive your order. If there's an issue, contact us on WhatsApp immediately
+              with unboxing video</li>
+            <li><strong>Within 24 hours:</strong> We'll review your video and approve/reject the return</li>
+            <li><strong>Next 3-5 days:</strong> Ship the item back to us (we'll provide address)</li>
+            <li><strong>After we receive:</strong> Refund processed within 5-7 business days</li>
+          </ol>
+        </div>
+
+        <div class="policy-section">
+          <h3>📹 Unboxing Video Requirements</h3>
+          <ul>
+            <li>✓ Video must show the sealed package before opening</li>
+            <li>✓ Show the shipping label clearly</li>
+            <li>✓ Open the package in one continuous shot (no cuts)</li>
+            <li>✓ Show the product and any defects clearly</li>
+            <li>✓ Keep all packaging materials</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h3>📱 How to Claim Return</h3>
+          <p><strong>Step 1:</strong> Message us on WhatsApp: <a href="https://wa.me/918420069397" target="_blank">+91
+              84200 69397</a></p>
+          <p><strong>Step 2:</strong> Send your unboxing video (via WhatsApp )</p>
+          <p><strong>Step 3:</strong> Include your order number and reason for return</p>
+          <p><strong>Step 4:</strong> Wait for our approval (usually within 24 hours)</p>
+          <p><strong>Step 5:</strong> Ship the item back to the address we provide</p>
+        </div>
+
+        <div class="policy-section policy-note">
+          <h3>💡 Important Notes</h3>
+          <ul>
+            <li>🎨 <strong>Handmade Products:</strong> Each piece is unique. Slight variations in color, size, or design
+              are part of the handmade charm and not considered defects.</li>
+            <li>📦 <strong>Return Shipping:</strong> Customer bears return shipping cost unless the defect is our fault.
+            </li>
+            <li>💰 <strong>Refund Method:</strong> Original payment method (bank transfer for COD orders).</li>
+            <li>⚡ <strong>No Unboxing Video = No Return:</strong> We strictly enforce this policy to prevent fraud.</li>
+          </ul>
+        </div>
+
+        <div class="policy-section policy-contact">
+          <h3>📞 Questions About Returns?</h3>
+          <p>Contact us:</p>
+          <p>📱 WhatsApp: <a href="https://wa.me/918420069397" target="_blank">+91 84200 69397</a></p>
+          <p>📧 Email: mytantutales@gmail.com</p>
+        </div>
+
+        <button class="policy-accept-btn"
+          onclick="document.getElementById('return-policy-modal').classList.remove('active')">
+          I Understand the Policy
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Admin Password Modal -->
+  <div id="adminModal" class="admin-modal">
+    <div class="admin-box">
+      <h3>🔐 Admin Access</h3>
+
+      <div class="password-wrapper"> <input type="password" id="adminPasswordInput" placeholder="Enter Admin Password">
+        <span id="toggleAdminEye">👁️</span>
+      </div>
+      
+      <div class="admin-actions"> <button id="adminLoginBtn">Enter</button> <button id="adminCancelBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <button id="backToTop" aria-label="Back to top">↑</button>
+</body>
+
+</html>

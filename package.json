@@ -1,0 +1,17 @@
+{
+  "name": "tantu-razorpay-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "razorpay": "^2.9.6",
+    "mongoose": "^7.0.0"
+  }
+}
