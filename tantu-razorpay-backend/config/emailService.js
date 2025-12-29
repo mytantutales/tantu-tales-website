@@ -20,7 +20,7 @@ export const sendOrderEmail = async (customerEmail, orderNumber, customerName, t
                 <h2>Thank you for your order! 🎉</h2>
                 <p>Hi ${customerName},</p>
 
-                <p>Your order has been received .</p>
+                <p>Your order has been placed .</p>
 
                 <h3>Order Details:</h3>
                 <p><strong>Order Number:</strong> ${orderNumber}</p>
