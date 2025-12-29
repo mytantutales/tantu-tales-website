@@ -1,17 +1,20 @@
 import express from 'express';
-import Newsletter from '../models/Newsletter.js';
 
 const router = express.Router();
 
-router.post('/subscribe', async (req, res) => {
+router.post('/login', (req, res) => {
   try {
-    const { email } = req.body;
-    if (!email || !email.includes('@')) return res.status(400).json({ error: 'Invalid email' });
-    const existing = await Newsletter.findOne({ email });
-    if (existing) return res.status(400).json({ error: 'Already subscribed' });
-    const subscriber = new Newsletter({ email });
-    await subscriber.save();
-    res.json({ success: true, message: '✅ Subscribed!' });
+    const { password } = req.body;
+    
+    if (!password) {
+      return res.status(400).json({ success: false, error: 'Password required' });
+    }
+    
+    if (password === process.env.ADMIN_PASSWORD) {
+      return res.json({ success: true, message: '✅ Login successful' });
+    }
+    
+    return res.status(401).json({ success: false, error: 'Wrong password' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
